@@ -167,7 +167,7 @@ public class MiaoshaController implements InitializingBean {
     	return Result.success(result);
     }
     
-    @AccessLimit(seconds=5, maxCount=5, needLogin=true)
+    @AccessLimit(seconds=5, maxCount=5, needLogin = true)
     @RequestMapping(value="/path", method=RequestMethod.GET)
     @ResponseBody
     public Result<String> getMiaoshaPath(HttpServletRequest request, MiaoshaUser user,

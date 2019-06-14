@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
+import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
 
@@ -22,6 +23,13 @@ public class RedisPoolFactory {
 		JedisPool jp = new JedisPool(poolConfig, redisConfig.getHost(), redisConfig.getPort(),
 				redisConfig.getTimeout()*1000, redisConfig.getPassword(), 0);
 		return jp;
+	}
+
+	@Bean
+	public Jedis jedis(){
+		Jedis jedis =  new Jedis("127.0.0.1",6379);
+		jedis.set("w21","qq");
+		return jedis;
 	}
 	
 }

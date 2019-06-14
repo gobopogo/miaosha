@@ -2,6 +2,11 @@ package cn.ctoedu.miaosha.util;
 
 import org.apache.commons.codec.digest.DigestUtils;
 
+/**
+ * @Author missli
+ * @Description 两次md5加密 input-->from-->db
+ * @Date 2019/6/13 15:22
+ */
 public class MD5Util {
 	
 	public static String md5(String src) {
